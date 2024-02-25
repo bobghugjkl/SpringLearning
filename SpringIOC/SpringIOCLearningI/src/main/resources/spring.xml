@@ -7,7 +7,9 @@
     <bean id="userService" class="com.xxxx.service.UserService">
         <!-- collaborators and configuration for this bean go here -->
     </bean>
-
+    <bean id="userService02" class="com.xxxx.service.UserService02">
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
 
 
     <!-- more bean definitions go here -->

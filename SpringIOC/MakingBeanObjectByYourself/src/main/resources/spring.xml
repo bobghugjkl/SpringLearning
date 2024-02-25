@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans>
+<!--    设置javabean对应的bean标签-->
+    <bean id = "userDao" class = "org.example.dao.UserDao"></bean>
+    <bean id = "userService" class="org.example.Srevice.UserService"></bean>
+</beans>
