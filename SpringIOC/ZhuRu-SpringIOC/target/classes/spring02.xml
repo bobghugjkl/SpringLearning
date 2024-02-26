@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+    <!--
+        IOC通过构造器注入：
+            通过constructor-arg标签进行注入
+                name：属性名称
+                ref：指定bean标签的id属性值
+    -->
+
+
+    <bean id="userService02" class="com.xxxx.service.UserService02">
+        <constructor-arg name="userDao02" ref="userDao02"></constructor-arg>
+        <constructor-arg name="studentDao" ref="studentDao"/>
+    </bean>
+    <bean id="userDao02" class="com.xxxx.dao.UserDao02"></bean>
+    <bean id="studentDao" class="com.xxxx.dao.StudentDao"></bean>
+
+
+<!--    静态-->
+    <bean id="typeService" class="com.xxxx.service.TypeService">
+        <property name="typeDao" ref="typeDao"/>
+    </bean>
+<!--    通过静态工厂注入
+通过静态工厂实例化需要被注入的bean对象-->
+<!--    <bean id="typeDao" class="com.xxxx.factory.StaticFactory" factory-method="createTypeDao"/>-->
+<!--    实例化工厂注入，通过实例化工厂去实例化需要被注入的对象-->
+    <bean id="instanceFactory" class="com.xxxx.factory.InstanceFactory" />
+    <bean id="typeDao" factory-bean="instanceFactory" factory-method="typeDao"/>
+</beans>

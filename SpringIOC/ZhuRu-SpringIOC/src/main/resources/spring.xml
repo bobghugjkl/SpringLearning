@@ -12,8 +12,51 @@
 
     <bean id="userService" class="com.xxxx.service.UserService">
         <property name="userDao" ref="userDao"></property>
+<!--        javabean object-->
+        <property name="studentDao" ref="studentDao"/>
+        <!--    基本类型-->
+        <property name="host" value="127.0.0.1"/>
+        <property name="port" value="8888"></property>
+        <property name="list">
+            <list>
+                <value>斋藤飞鸟</value>
+                <value>西野七濑</value>
+            </list>
+
+        </property>
+        <property name="sets">
+            <set>
+                <value>桥本奈奈末</value>
+                <value>生田绘梨花</value>
+            </set>
+        </property>
+        <!--Map注入-->
+        <property name="map">
+            <map>
+                <entry>
+                    <key><value>周杰伦</value></key>
+                    <value>我是如此相信</value>
+                </entry>
+                <entry>
+                    <key><value>林俊杰</value></key>
+                    <value>可惜没如果</value>
+                </entry>
+                <entry>
+                    <key><value>陈奕迅</value></key>
+                    <value>十年</value>
+                </entry>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="bj">北京</prop>
+                <prop key="sh">上海</prop>
+            </props>
+        </property>
     </bean>
     <bean id="userDao" class="com.xxxx.dao.UserDao"></bean>
+    <bean id="studentDao" class="com.xxxx.dao.StudentDao"></bean>
+
 
 
 </beans>
