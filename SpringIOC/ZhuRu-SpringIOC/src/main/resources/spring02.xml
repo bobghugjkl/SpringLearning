@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
@@ -22,8 +23,10 @@
 
 
 <!--    静态-->
-    <bean id="typeService" class="com.xxxx.service.TypeService">
-        <property name="typeDao" ref="typeDao"/>
+    <bean id="typeService" class="com.xxxx.service.TypeService"
+        p:typeDao-ref="typeDao"
+    >
+
     </bean>
 <!--    通过静态工厂注入
 通过静态工厂实例化需要被注入的bean对象-->

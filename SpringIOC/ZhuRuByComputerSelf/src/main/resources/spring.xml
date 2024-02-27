@@ -1,0 +1,18 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--    开启自动化注入-->
+    <context:annotation-config/>
+    <bean id="userDao" class="com.xxxx.Dao.UserDao"></bean>
+    <bean id="userService" class="com.xxxx.Service.UserService"></bean>
+    <bean id="userDao01" class="com.xxxx.Dao.UserDao01"></bean>
+    <bean id="userDao02" class="com.xxxx.Dao.UserDao02"></bean>
+
+    <bean id="accountDao" class="com.xxxx.Dao.AccountDao"></bean>
+    <bean id="accountService" class="com.xxxx.Service.AccountService"></bean>
+</beans>
