@@ -19,7 +19,7 @@ public class JdkHanlder implements InvocationHandler {
     }
 
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-
+        System.out.println(proxy.getClass().getName());
 //        增强
         System.out.println("斋藤飞鸟");
 //        调用
