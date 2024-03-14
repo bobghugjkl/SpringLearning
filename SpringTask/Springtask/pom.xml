@@ -2,12 +2,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.example</groupId>
-  <artifactId>SpringAOCfirst</artifactId>
+  <groupId>com.xxxx</groupId>
+  <artifactId>Springtask</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>SpringAOCfirst</name>
+  <name>Springtask</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -15,32 +15,16 @@
   </properties>
 
   <dependencies>
-    <!--Spring AOP-->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
-    <!--  cglib  -->
-    <!--  https://mvnrepository.com/artifact/cglib/cglib  -->
-    <dependency>
-      <groupId>cglib</groupId>
-      <artifactId>cglib</artifactId>
-      <version>2.2.2</version>
-    </dependency>
-    <!--  Spring的相关依赖  -->
-    <!--  https://mvnrepository.com/artifact/org.springframework/spring-context  -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
       <version>5.2.4.RELEASE</version>
-    </dependency>
-    <!-- Spring AOP -->
-    <dependency>
-      <groupId>org.aspectj</groupId>
-      <artifactId>aspectjweaver</artifactId>
-      <version>1.8.9</version>
     </dependency>
   </dependencies>
 </project>

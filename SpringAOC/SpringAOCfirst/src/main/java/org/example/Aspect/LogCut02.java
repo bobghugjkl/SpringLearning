@@ -5,31 +5,30 @@ import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 @Component
-@Aspect
-public class LogCut {
-    @Pointcut("execution(* org.example.Service..*.*(..))")
+
+public class LogCut02 {
     public void cut(){
 //        切入点，定义要拦截哪些类的哪些方法，匹配规则拦截什么方法
 
     }
 //    通知
-    @Before(value = "cut()")
+
     public void before(){
         System.out.println("information before");
     }
-    @AfterReturning
+
     public void afterReturn(){
         System.out.println("information return");
     }
-    @After(value = "cut()")
+
     public void after(){
         System.out.println("information after");
     }
-    @AfterThrowing(value = "cut()",throwing = "e")
+
     public void afterThrow(Exception e){
         System.out.println("information after throw"+ e.getMessage());
     }
-    @Around(value = "cut()")
+
     public Object around(ProceedingJoinPoint pjp){
         System.out.println("information around");
         Object object = null;
