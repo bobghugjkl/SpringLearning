@@ -1,5 +1,6 @@
 package com.xxxx.springmvc.controller;
 
+import com.xxxx.springmvc.vo.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,5 +26,20 @@ public class ParamsController {
             System.out.println(id);
         }
     }
-
+    @RequestMapping("p07")
+    public void p07(User user){
+        System.out.println(user);
+    }
+//    @RequestMapping("p08")
+//    public void p08(User user) {
+//        user.getIds().forEach(id->{
+//            System.out.println(id);
+//        });
+//    }
+//    @RequestMapping("p09")
+//    public void p09(User user){
+//        user.getMap().forEach((k,v)->{
+//            System.out.println(k+" "+v);
+//        });
+//    }
 }
