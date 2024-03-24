@@ -28,4 +28,37 @@
         <property name="prefix" value="/WEB-INF/jsp/" />
         <property name="suffix" value=".jsp" />
     </bean>
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize">
+            <value>104857600</value>
+        </property>
+        <property name="maxInMemorySize">
+            <value>4096</value>
+        </property>
+    </bean>
+<!--&lt;!&ndash;前面的先执行，先配置的其他方法（除了pre）方法后执行&ndash;&gt;-->
+<!--&lt;!&ndash;    配置方式一&ndash;&gt;-->
+<!--    <mvc:interceptors>-->
+<!--        &lt;!&ndash; 使用bean定义一个Interceptor-->
+<!--        直接定义在mvc:interceptors根下面的Interceptor将拦截所有的请求 &ndash;&gt;-->
+<!--        <bean class="com.xxxx.springmvc.interceptors.MyInterceptor01" />-->
+<!--    </mvc:interceptors>-->
+<!--    &lt;!&ndash;配置方式二&ndash;&gt;-->
+<!--    <mvc:interceptors>-->
+<!--        &lt;!&ndash; 定义在 mvc:interceptor 下面 拦截所有test地址开头的请求&ndash;&gt;-->
+<!--        <mvc:interceptor>-->
+<!--            <mvc:mapping path="/**" />&lt;!&ndash;**只拦截全部的 &ndash;&gt;-->
+<!--&lt;!&ndash;            <mvc:exclude-mapping path="/m01.do"/>&lt;!&ndash;放行 &ndash;&gt;&ndash;&gt;-->
+<!--            <bean class="com.xxxx.springmvc.interceptors.MyInterceptor2" />-->
+<!--        </mvc:interceptor>-->
+<!--    </mvc:interceptors>-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+        <mvc:mapping path="/**"/>
+        <mvc:exclude-mapping path="/user/login.do"/>
+        <mvc:exclude-mapping path="/uploadFile.do"/>
+            <bean class="com.xxxx.springmvc.interceptors.LoginInterceptor"></bean>
+    </mvc:interceptor>
+    </mvc:interceptors>
 </beans>

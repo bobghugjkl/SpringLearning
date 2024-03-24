@@ -12,6 +12,7 @@ public class HelloController {
      */
     @RequestMapping("hello")
     public ModelAndView hello(){
+        System.out.println("request come in");
         ModelAndView mv=new ModelAndView();
         mv.addObject("hello", "hello spring mvc");
         mv.setViewName("hello");
