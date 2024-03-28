@@ -1,0 +1,12 @@
+# spring:
+#  freemarker:
+#    suffix: .ftl
+#    content-type: text/html
+#    charset: UTF-8
+#    template-loader-path: classpath:/views/
+server:
+  port: 8989
+spring:
+  thymeleaf:
+    prefix: classpath:/html/
+    cache: false #禁止缓存操作
